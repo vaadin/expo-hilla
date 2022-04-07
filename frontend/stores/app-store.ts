@@ -2,7 +2,7 @@ import { RouterLocation } from '@vaadin/router';
 import { makeAutoObservable } from 'mobx';
 
 export class AppStore {
-  applicationName = 'expo-hilla';
+  applicationName = 'Hilla Cool!';
 
   // The location, relative to the base path, e.g. "hello" when viewing "/hello"
   location = '';

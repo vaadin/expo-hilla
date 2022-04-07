@@ -5,10 +5,10 @@ import '@vaadin/text-field';
 import * as HelloWorldEndpoint from 'Frontend/generated/HelloWorldEndpoint';
 import { html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { View } from '../../views/view';
+import { View } from './view';
 
-@customElement('hello-world-view')
-export class HelloWorldView extends View {
+@customElement('sandbox-view')
+export class SandboxView extends View {
   name = '';
 
   connectedCallback() {

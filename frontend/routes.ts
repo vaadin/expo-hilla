@@ -1,6 +1,7 @@
 import { Route } from '@vaadin/router';
-import './views/helloworld/hello-world-view';
 import './views/main-layout';
+import './views/crud-view';
+import './views/sandbox-view';
 
 export type ViewRoute = Route & {
   title?: string;
@@ -12,25 +13,33 @@ export const views: ViewRoute[] = [
   // place routes below (more info https://hilla.dev/docs/routing)
   {
     path: '',
-    component: 'hello-world-view',
-    icon: '',
-    title: '',
+    component: 'crud-view',
+    icon: 'la la-columns',
+    title: 'CRUD',
   },
   {
-    path: 'hello',
-    component: 'hello-world-view',
-    icon: 'la la-globe',
-    title: 'Hello World',
-  },
-  {
-    path: 'about',
-    component: 'about-view',
-    icon: 'la la-file',
-    title: 'About',
-    action: async (_context, _command) => {
-      await import('./views/about/about-view');
-      return;
+    path: 'dashboards',
+    component: 'dashboard-view',
+    icon: 'la la-chart-area',
+    title: 'Dashboard',
+    action: async () => {
+      await import('./views/dashboard-view');
     },
+  },
+  {
+    path: 'map',
+    component: 'map-view',
+    icon: 'la la-map',
+    title: 'Map',
+    action: async () => {
+      await import('./views/map-view');
+    },
+  },
+  {
+    path: 'sandbox',
+    component: 'sandbox-view',
+    icon: 'la la-glasses',
+    title: 'Sandbox',
   },
 ];
 export const routes: ViewRoute[] = [
