@@ -20,6 +20,12 @@ export class CrudView extends View {
   @state() selected?: Person;
   binder = new Binder(this, PersonModel);
 
+  async connectedCallback() {
+    super.connectedCallback();
+    this.classList.add('h-full', 'w-full');
+    this.people = await CrudEndpoint.findAll();
+  }
+
   render() {
     const { model } = this.binder;
 
@@ -28,8 +34,8 @@ export class CrudView extends View {
         <vaadin-grid
           class="h-full"
           .items=${this.people}
-          @active-item-changed=${this.activeItemChanged}
           .selectedItems=${[this.selected]}
+          @active-item-changed=${this.activeItemChanged}
           style="width: 65%;"
         >
           <vaadin-grid-sort-column path="firstName" auto-width></vaadin-grid-sort-column>
@@ -72,11 +78,5 @@ export class CrudView extends View {
     if (this.selected) {
       this.binder.read(this.selected);
     }
-  }
-
-  async connectedCallback() {
-    super.connectedCallback();
-    this.classList.add('h-full', 'w-full');
-    this.people = await CrudEndpoint.findAll();
   }
 }

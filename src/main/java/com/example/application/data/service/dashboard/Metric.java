@@ -1,21 +1,26 @@
 package com.example.application.data.service.dashboard;
 
-import java.text.Format;
+import dev.hilla.Nonnull;
 
 public class Metric {
+    @Nonnull
     private String name;
+    @Nonnull
     private Double value;
+    @Nonnull
     private String unit;
+    @Nonnull
     private Double change;
-    private Format formatter;
+    @Nonnull
+    private Integer fractionDigits;
 
 
-    public Metric(String name, Double value, String unit, Format formatter) {
+    public Metric(String name, Double value, String unit, Integer fractionDigits) {
         this.name = name;
         this.value = value;
         this.unit = unit;
         this.change = 0.0;
-        this.formatter = formatter;
+        this.fractionDigits = fractionDigits;
     }
 
     public String getName() {
@@ -50,11 +55,11 @@ public class Metric {
         this.change = change;
     }
 
-    public Format getFormatter() {
-        return formatter;
+    public Integer getFractionDigits() {
+        return fractionDigits;
     }
 
-    public void setFormatter(Format formatter) {
-        this.formatter = formatter;
+    public void setFractionDigits(Integer fractionDigits) {
+        this.fractionDigits = fractionDigits;
     }
 }

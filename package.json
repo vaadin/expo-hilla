@@ -120,7 +120,8 @@
     "construct-style-sheets-polyfill": "3.0.4",
     "line-awesome": "1.3.0",
     "lit": "2.1.4",
-    "mobx": "^6.3.5"
+    "mobx": "^6.3.5",
+    "socket.io-client": "4.4.1"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "3.1.0",
@@ -256,7 +257,8 @@
     "line-awesome": "$line-awesome",
     "mobx": "$mobx",
     "@hilla/form": "$@hilla/form",
-    "@hilla/frontend": "$@hilla/frontend"
+    "@hilla/frontend": "$@hilla/frontend",
+    "socket.io-client": "$socket.io-client"
   },
   "vaadin": {
     "dependencies": {
@@ -374,7 +376,8 @@
       "@vaadin/vertical-layout": "23.0.4",
       "@vaadin/virtual-list": "23.0.4",
       "construct-style-sheets-polyfill": "3.0.4",
-      "lit": "2.1.4"
+      "lit": "2.1.4",
+      "socket.io-client": "4.4.1"
     },
     "devDependencies": {
       "@rollup/plugin-replace": "3.1.0",
@@ -388,6 +391,6 @@
       "workbox-core": "6.5.0",
       "workbox-precaching": "6.5.0"
     },
-    "hash": "f60a225eeb053f24f23c98202a72e15665074ae57c0fd6c8bb516cf5d140a675"
+    "hash": "87e3fc64e80e4b1ba075dae6767a54724e2a56210cb53d086c8df30f9fbdbdc0"
   }
 }
