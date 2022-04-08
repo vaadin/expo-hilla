@@ -5,7 +5,7 @@ import '@vaadin/grid/vaadin-grid-sort-column.js';
 import '@vaadin/text-field';
 import '@vaadin/email-field';
 import '@vaadin/date-picker';
-import { GridActiveItemChangedEvent, GridDataProviderCallback, GridDataProviderParams } from '@vaadin/grid';
+import { GridActiveItemChangedEvent } from '@vaadin/grid';
 import { html } from 'lit';
 import { View } from './view';
 import Person from 'Frontend/generated/com/example/application/data/entity/Person';

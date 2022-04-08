@@ -1,6 +1,5 @@
 import * as L from 'leaflet';
-import { html } from 'lit';
-import { customElement, query } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 import { View } from '../views/view';
 
 const openStreetMapLayer = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
