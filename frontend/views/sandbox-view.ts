@@ -4,22 +4,26 @@ import { Notification } from '@vaadin/notification';
 import '@vaadin/text-field';
 import * as HelloWorldEndpoint from 'Frontend/generated/HelloWorldEndpoint';
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 import { View } from './view';
 
 @customElement('sandbox-view')
 export class SandboxView extends View {
-  name = '';
+  @state() name = '';
+  @state() greetings: string[] = [];
 
   connectedCallback() {
     super.connectedCallback();
-    this.classList.add('flex', 'p-m', 'gap-m', 'items-end');
+    this.classList.add('flex', 'flex-col', 'p-m', 'gap-m', 'items-start');
   }
 
   render() {
     return html`
-      <vaadin-text-field label="Your name" @value-changed=${this.nameChanged}></vaadin-text-field>
-      <vaadin-button @click=${this.sayHello}>Say hello</vaadin-button>
+      <div class="flex gap-m items-end">
+        <vaadin-text-field label="Your name" .value=${this.name} @value-changed=${this.nameChanged}></vaadin-text-field>
+        <vaadin-button @click=${this.sayHello}>Say hello</vaadin-button>
+      </div>
+      ${this.greetings.map((greeting) => html`<p>${greeting}</p>`)}
     `;
   }
 
@@ -29,6 +33,6 @@ export class SandboxView extends View {
 
   async sayHello() {
     const serverResponse = await HelloWorldEndpoint.sayHello(this.name);
-    Notification.show(serverResponse);
+    this.greetings = [...this.greetings, serverResponse];
   }
 }
