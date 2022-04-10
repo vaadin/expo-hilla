@@ -38,8 +38,7 @@ export class MainLayout extends Layout {
                     <a
                       ?highlight=${viewRoute.path == appStore.location}
                       class="menu-item-link"
-                      href=${router.urlForPath(viewRoute.path)}
-                    >
+                      href=${router.urlForPath(viewRoute.path)}>
                       <span class="${viewRoute.icon} menu-item-icon"></span>
                       <span class="menu-item-text">${viewRoute.title}</span>
                     </a>
