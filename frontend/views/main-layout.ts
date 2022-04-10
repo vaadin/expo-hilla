@@ -11,6 +11,7 @@ import { router } from '../index';
 import { views } from '../routes';
 import { appStore } from '../stores/app-store';
 import { Layout } from './view';
+import logo from '../images/hilla-dark.png';
 
 interface RouteInfo {
   path: string;
@@ -28,7 +29,7 @@ export class MainLayout extends Layout {
           <h1 class="view-title">${appStore.currentViewTitle}</h1>
         </header>
         <section class="drawer-section" slot="drawer">
-          <h2 class="app-name">${appStore.applicationName}</h2>
+          <img class="app-name" src=${logo} alt="Hilla" />
           <nav aria-labelledby="views-title" class="menu-item-container">
             <ul class="navigation-list">
               ${this.getMenuRoutes().map(
