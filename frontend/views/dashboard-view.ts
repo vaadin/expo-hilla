@@ -40,8 +40,7 @@ export class DashboardView extends View {
               <span theme="badge ${metric.change > 0 ? 'success' : 'error'}">
                 <vaadin-icon
                   class="box-border p-xs"
-                  icon=${metric.change > 0 ? 'vaadin:arrow-up' : 'vaadin:arrow-down'}
-                ></vaadin-icon>
+                  icon=${metric.change > 0 ? 'vaadin:arrow-up' : 'vaadin:arrow-down'}></vaadin-icon>
                 <span>${metric.change.toLocaleString('en-US', { maximumFractionDigits: 2 })}</span>
               </span>
             </div>
