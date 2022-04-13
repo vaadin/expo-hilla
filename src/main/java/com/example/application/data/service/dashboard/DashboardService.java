@@ -21,7 +21,7 @@ public class DashboardService {
                 new Metric(MetricType.CURRENT_USERS.getName(), 745.0, "", 0),
                 new Metric(MetricType.VIEWS.getName(), 54.6, "k", 1),
                 new Metric(MetricType.CONVERSION_RATE.getName(), 18.0, "%", 1),
-                new Metric(MetricType.SIGNUPS.getName(), 300.0, "", 1));
+                new Metric(MetricType.SIGNUPS.getName(), 300.0, "", 0));
 
         sink.emitNext(latestMetrics, Sinks.EmitFailureHandler.FAIL_FAST);
     }
