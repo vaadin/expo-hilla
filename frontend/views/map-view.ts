@@ -19,6 +19,6 @@ export class MapView extends View {
     const tileLayer = L.tileLayer(openStreetMapLayer, { attribution: openStreetMapAttribution, maxZoom: 13 });
     tileLayer.addTo(map);
 
-    L.marker([33.75, -84.38]).addTo(map);
+    L.marker([36.1716, -115.1391]).addTo(map);
   }
 }
