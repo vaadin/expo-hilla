@@ -2,6 +2,7 @@ import '@vaadin/button';
 import '@vaadin/notification';
 import { Notification } from '@vaadin/notification';
 import '@vaadin/text-field';
+import { TextFieldChangeEvent } from '@vaadin/text-field';
 import * as HelloWorldEndpoint from 'Frontend/generated/HelloWorldEndpoint';
 import { html } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
@@ -27,8 +28,8 @@ export class SandboxView extends View {
     `;
   }
 
-  nameChanged(e: CustomEvent) {
-    this.name = e.detail.value;
+  nameChanged(e: TextFieldChangeEvent) {
+    this.name = e.target.value;
   }
 
   async sayHello() {
