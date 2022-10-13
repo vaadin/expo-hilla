@@ -32,11 +32,10 @@ export class CrudView extends View {
     return html`
       <vaadin-split-layout class="h-full w-full">
         <vaadin-grid
-          class="h-full"
+          class="people-grid h-full"
           .items=${this.people}
           .selectedItems=${[this.selected]}
-          @active-item-changed=${this.activeItemChanged}
-          style="width: 65%;">
+          @active-item-changed=${this.activeItemChanged}>
           <vaadin-grid-sort-column path="firstName" auto-width></vaadin-grid-sort-column>
           <vaadin-grid-sort-column path="lastName" auto-width></vaadin-grid-sort-column>
           <vaadin-grid-sort-column path="email" auto-width></vaadin-grid-sort-column>
