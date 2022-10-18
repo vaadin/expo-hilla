@@ -13,11 +13,6 @@ export class SandboxView extends View {
   @state() name = '';
   @state() greetings: string[] = [];
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.classList.add('flex', 'flex-col', 'p-m', 'gap-m', 'items-start');
-  }
-
   render() {
     return html`
       <div class="flex gap-m items-end">
@@ -35,5 +30,10 @@ export class SandboxView extends View {
   async sayHello() {
     const serverResponse = await HelloWorldEndpoint.sayHello(this.name);
     this.greetings = [...this.greetings, serverResponse];
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.classList.add('flex', 'flex-col', 'p-m', 'gap-m', 'items-start');
   }
 }
