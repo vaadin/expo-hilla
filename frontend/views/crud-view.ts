@@ -72,7 +72,7 @@ export class CrudView extends View {
   }
 
   activeItemChanged(e: GridActiveItemChangedEvent<Person>) {
-    this.selected = e.detail.value;
+    this.selected = e.detail.value as Person;
     if (this.selected) {
       this.binder.read(this.selected);
     }
