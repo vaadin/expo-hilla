@@ -6,6 +6,7 @@ import com.example.application.data.service.dashboard.Metric;
 import com.example.application.data.service.dashboard.OrderInfo;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.Endpoint;
+import dev.hilla.Nonnull;
 import reactor.core.publisher.Flux;
 
 @Endpoint
@@ -17,11 +18,13 @@ class DashboardEndpoint {
     this.service = service;
   }
 
-  public List<OrderInfo> getOrderInfo() {
+  @Nonnull
+  public List<@Nonnull OrderInfo> getOrderInfo() {
     return service.getOrderInfo();
   }
 
-  public Flux<List<Metric>> getMetrics() {
+  @Nonnull
+  public Flux<List<@Nonnull Metric>> getMetrics() {
     return service.getMetrics();
   }
 }

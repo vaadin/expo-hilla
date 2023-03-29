@@ -23,7 +23,7 @@ export class CrudView extends View {
   async connectedCallback() {
     super.connectedCallback();
     this.classList.add('h-full', 'w-full');
-    this.people = await CrudEndpoint.findAll();
+    this.people = await CrudEndpoint.findAll() ?? [];
   }
 
   render() {

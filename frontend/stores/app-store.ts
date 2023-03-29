@@ -1,4 +1,5 @@
 import { RouterLocation } from '@vaadin/router';
+import { DashboardViewStore } from "Frontend/stores/dashboard-view-store";
 import { makeAutoObservable } from 'mobx';
 
 export class AppStore {
@@ -11,6 +12,7 @@ export class AppStore {
 
   constructor() {
     makeAutoObservable(this);
+    dashboardViewStore = new DashboardViewStore();
   }
 
   setLocation(location: RouterLocation) {
@@ -30,3 +32,4 @@ export class AppStore {
   }
 }
 export const appStore = new AppStore();
+export const dashboardViewStore = appStore.;
