@@ -5,13 +5,13 @@ import '@vaadin/text-field';
 import { TextFieldChangeEvent } from '@vaadin/text-field';
 import * as HelloWorldEndpoint from 'Frontend/generated/HelloWorldEndpoint';
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 import { View } from './view';
 
 @customElement('sandbox-view')
 export class SandboxView extends View {
-  name = '';
-  greetings: string[] = [];
+  @state() name = '';
+  @state() greetings: string[] = [];
 
   render() {
     return html`
@@ -30,8 +30,7 @@ export class SandboxView extends View {
 
   async sayHello() {
     const serverResponse = await HelloWorldEndpoint.sayHello(this.name);
-    Notification.show(serverResponse);
-    //this.greetings = [...this.greetings, serverResponse];
+    this.greetings = [...this.greetings, serverResponse];
   }
 
   connectedCallback() {
