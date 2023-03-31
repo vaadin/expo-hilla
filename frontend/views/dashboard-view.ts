@@ -3,10 +3,10 @@ import Metric from 'Frontend/generated/com/example/application/data/service/dash
 import { html } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { View } from './view';
-import '@vaadin/vaadin-icon';
+import '@vaadin/icon';
 import '@vaadin/icons';
-import '@vaadin/vaadin-select';
-import '@vaadin/vaadin-charts';
+import '@vaadin/select';
+import '@vaadin/charts';
 import { DashboardEndpoint } from 'Frontend/generated/endpoints';
 
 @customElement('dashboard-view')

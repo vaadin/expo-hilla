@@ -19,6 +19,7 @@ export class SandboxView extends View {
         <vaadin-text-field label="Your name" .value=${this.name} @value-changed=${this.nameChanged}></vaadin-text-field>
         <vaadin-button @click=${this.sayHello}>Say hello</vaadin-button>
       </div>
+
       ${this.greetings.map((greeting) => html`<p>${greeting}</p>`)}
     `;
   }
