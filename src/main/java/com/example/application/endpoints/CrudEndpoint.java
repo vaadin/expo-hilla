@@ -5,6 +5,7 @@ import com.example.application.data.entity.Person;
 import com.example.application.data.service.dashboard.PersonRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.Endpoint;
+import dev.hilla.Nonnull;
 
 @Endpoint
 @AnonymousAllowed
@@ -15,7 +16,8 @@ class CrudEndpoint {
     this.repo = repo;
   }
 
-  public List<Person> findAll() {
+  @Nonnull
+  public List<@Nonnull Person> findAll() {
     return repo.findAll();
   }
 
