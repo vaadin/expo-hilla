@@ -11,6 +11,7 @@ import { router } from '../index';
 import { views } from '../routes';
 import { appStore } from '../stores/app-store';
 import { Layout } from './view';
+//@ts-ignore
 import logo from '../images/hilla-dark.png';
 
 interface RouteInfo {

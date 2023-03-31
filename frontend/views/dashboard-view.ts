@@ -3,10 +3,10 @@ import Metric from 'Frontend/generated/com/example/application/data/service/dash
 import { html } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { View } from './view';
-import '@vaadin/vaadin-icon';
+import '@vaadin/icon';
 import '@vaadin/icons';
-import '@vaadin/vaadin-select';
-import '@vaadin/vaadin-charts';
+import '@vaadin/select';
+import '@vaadin/charts';
 import { DashboardEndpoint } from 'Frontend/generated/endpoints';
 
 @customElement('dashboard-view')
@@ -14,7 +14,7 @@ export class DashboardView extends View {
   @state() metrics: Metric[] = [];
   @state() orderInfo: OrderInfo[] = [];
 
-  years = [{ label: '2022' }, { label: '2021' }, { label: '2020' }];
+  years = [{ label: '2023' }, { label: '2022' }, { label: '2021' }, { label: '2020' }];
   monthNames: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   async connectedCallback() {
@@ -53,7 +53,7 @@ export class DashboardView extends View {
             <h2 class="text-xl m-0">Orders</h2>
             <span class="text-secondary text-xs">Cumulative (city/month)</span>
           </div>
-          <vaadin-select .items=${this.years} value="2022"></vaadin-select>
+          <vaadin-select .items=${this.years} value="2023"></vaadin-select>
         </div>
         ${this.orderInfo &&
         html`

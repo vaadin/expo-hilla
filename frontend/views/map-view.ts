@@ -14,7 +14,7 @@ export class MapView extends View {
 
   firstUpdated() {
     const map = L.map(this);
-    map.setView([50.80, 6.88], 14);
+    map.setView([33.7591776, -84.3982603], 14);
 
     const tileLayer = L.tileLayer(openStreetMapLayer, { attribution: openStreetMapAttribution, maxZoom: 13 });
     tileLayer.addTo(map);

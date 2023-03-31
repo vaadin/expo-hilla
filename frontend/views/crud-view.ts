@@ -23,7 +23,7 @@ export class CrudView extends View {
   async connectedCallback() {
     super.connectedCallback();
     this.classList.add('h-full', 'w-full');
-    this.people = await CrudEndpoint.findAll();
+    this.people = (await CrudEndpoint.findAll()) ?? [];
   }
 
   render() {
@@ -43,7 +43,7 @@ export class CrudView extends View {
           <vaadin-grid-sort-column path="country" auto-width></vaadin-grid-sort-column>
         </vaadin-grid>
 
-        <div class="flex flex-col gap-s p-m" style="width: 35%;">
+        <div class="flex flex-col gap-s p-m" style="width: 35%;" ?hidden=${!this.selected}>
           <vaadin-text-field label="First name" ${field(model.firstName)}></vaadin-text-field>
           <vaadin-text-field label="Last name" ${field(model.lastName)}></vaadin-text-field>
           <vaadin-email-field label="Email" ${field(model.email)}></vaadin-email-field>
